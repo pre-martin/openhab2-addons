@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="holidays"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <!-- Holidays Binding -->
+    
+    <thing-type id="public">
+        <label>Public Holidays Thing</label>
+        <description>Provides information about public holidays.</description>
+
+        <channels>
+            <channel id="publicHoliday" typeId="publicHoliday" />
+        </channels>
+    </thing-type>
+
+    <thing-type id="school">
+        <label>School Holidays Thing</label>
+        <description>Provides information about school holidays.</description>
+        
+        <channels>
+            <channel id="schoolHoliday" typeId="schoolHoliday" />
+        </channels>
+
+        <config-description>
+            <parameter name="file" type="text">
+                <label>School holidays file</label>
+                <description>File with the school holidays</description>
+                <default>holidays-school.txt</default>
+            </parameter>
+        </config-description>
+    </thing-type>    
+
+    <channel-type id="publicHoliday">
+        <item-type>Switch</item-type>
+        <label>Public Holiday</label>
+        <description>Switch is on for public holidays</description>
+        <category>Switch</category>
+        <state readOnly="true" />
+    </channel-type>
+
+    <channel-type id="schoolHoliday">
+        <item-type>Switch</item-type>
+        <label>School Holiday</label>
+        <description>Switch is on for school holidays</description>
+        <category>Switch</category>
+        <state readOnly="true" />
+    </channel-type>
+
+</thing:thing-descriptions>
