@@ -64,6 +64,7 @@ public class SchoolHolidaysThingHandler extends AbstractHolidaysThingHandler {
             addDailyJob();
 
             schoolHolidaysManager = new SchoolHolidaysManager(this, holidaysSchoolFile);
+            schoolHolidaysManager.init();
             // Reload job to check if holdays file was modified.
             deleteReloadJob();
             addReloadJob();

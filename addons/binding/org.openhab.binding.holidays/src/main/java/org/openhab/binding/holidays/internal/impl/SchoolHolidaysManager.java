@@ -45,7 +45,9 @@ public class SchoolHolidaysManager {
         if (!this.holidaysFile.exists()) {
             logger.warn("Vacation file {} does not exist", this.holidaysFile.getAbsolutePath());
         }
+    }
 
+    public void init() {
         // Trigger initial reading of the file
         readFileIfChanged();
     }
