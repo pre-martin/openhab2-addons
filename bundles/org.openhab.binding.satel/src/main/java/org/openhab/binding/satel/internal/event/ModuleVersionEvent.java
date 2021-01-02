@@ -12,11 +12,14 @@
  */
 package org.openhab.binding.satel.internal.event;
 
+import org.eclipse.jdt.annotation.NonNullByDefault;
+
 /**
  * Event class describing version of communication module.
  *
  * @author Krzysztof Goworek - Initial contribution
  */
+@NonNullByDefault
 public class ModuleVersionEvent implements SatelEvent {
 
     private String version;
@@ -25,7 +28,7 @@ public class ModuleVersionEvent implements SatelEvent {
     /**
      * Constructs new event class.
      *
-     * @param version           string describing version number and firmware revision
+     * @param version string describing version number and firmware revision
      * @param extPayloadSupport the module supports extended (32-bit) payload for zones/outputs
      */
     public ModuleVersionEvent(String version, boolean extPayloadSupport) {
